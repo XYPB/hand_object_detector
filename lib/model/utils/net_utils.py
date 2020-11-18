@@ -150,6 +150,10 @@ def vis_detections_PIL(im, class_name, dets, thresh=0.8, font_path='lib/model/ut
     width, height = image.size
     
     for hand_idx, i in enumerate(range(np.minimum(10, dets.shape[0]))):
+        # 0-3: bbox: [x0, y0, x1, y1]
+        # 4: score
+        # 5: state
+        # -1: lr: 0-l 1-r
         bbox = list(int(np.round(x)) for x in dets[i, :4])
         score = dets[i, 4]
         lr = dets[i, -1]

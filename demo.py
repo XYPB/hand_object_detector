@@ -370,7 +370,9 @@ if __name__ == '__main__':
               
         if vis:
           # visualization
-          im2show = vis_detections_filtered_objects_PIL(im2show, obj_dets, hand_dets, thresh_hand, thresh_obj)
+          # print(obj_dets)
+          # print('hands are: {0}'.format(hand_dets))
+          im2show = vis_detections_filtered_objectdetss_PIL(im2show, None, hand_dets, thresh_hand, thresh_obj)
 
         misc_toc = time.time()
         nms_time = misc_toc - misc_tic
